@@ -54,7 +54,7 @@ export default function HeroSection() {
           </div>
           <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.25)' }} />
           <div className="hero__phone-item">
-            <span>📞</span><a href="tel:+919404338713">9404338713</a>
+            <span>📞</span><a href="tel:+918308465188">8308465188</a>
           </div>
         </div>
 
@@ -62,9 +62,9 @@ export default function HeroSection() {
         <div className="hero-mini-stats hero-animate-5">
           {[
             { num: '5000+', label: 'समाधानी रुग्ण' },
-            { num: '10+',   label: 'वर्षांचा अनुभव' },
-            { num: '10',    label: 'उपचार सेवा' },
-            { num: '98%',   label: 'यशस्वी उपचार' },
+            { num: '10+', label: 'वर्षांचा अनुभव' },
+            { num: '10', label: 'उपचार सेवा' },
+            { num: '98%', label: 'यशस्वी उपचार' },
           ].map(({ num, label }) => (
             <div key={label} className="hero-mini-stat">
               <div className="hero-mini-stat__num">{num}</div>

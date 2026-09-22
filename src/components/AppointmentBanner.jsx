@@ -23,10 +23,10 @@ export default function AppointmentBanner() {
                   9404338713
                 </a>
                 <a
-                  href="tel:+919404338713"
+                  href="tel:+918308465188"
                   style={{ color: 'rgba(45,27,0,0.7)', fontSize: 'var(--fs-base)', fontWeight: 600 }}
                 >
-                  9404338713
+                  8308465188
                 </a>
               </div>
             </div>

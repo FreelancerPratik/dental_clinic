@@ -7,15 +7,15 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import PageHero from '../components/PageHero';
 
 const SERVICE_LABELS = {
-  checkup:      'दातांची तपासणी (Dental Checkup)',
-  cleaning:     'दातांची स्वच्छता (Scaling & Polishing)',
-  rct:          'रूट कॅनाल उपचार (Root Canal Treatment)',
+  checkup: 'दातांची तपासणी (Dental Checkup)',
+  cleaning: 'दातांची स्वच्छता (Scaling & Polishing)',
+  rct: 'रूट कॅनाल उपचार (Root Canal Treatment)',
   'crown-bridge': 'क्राऊन व ब्रिज (Crown & Bridge)',
-  cosmetic:     'कॉस्मेटिक डेंटिस्ट्री (Smile Design)',
-  implants:     'डेंटल इम्प्लांट्स (Dental Implants)',
-  dentures:     'कबळी (Dentures)',
-  fmr:          'पूर्ण तोंड पुनर्वसन (Full Mouth Rehabilitation)',
-  other:        'इतर (Other)',
+  cosmetic: 'कॉस्मेटिक डेंटिस्ट्री (Smile Design)',
+  implants: 'डेंटल इम्प्लांट्स (Dental Implants)',
+  dentures: 'कबळी (Dentures)',
+  fmr: 'पूर्ण तोंड पुनर्वसन (Full Mouth Rehabilitation)',
+  other: 'इतर (Other)',
 };
 
 function validate(fields) {
@@ -40,8 +40,8 @@ export default function Contact() {
 
   const today = new Date().toISOString().split('T')[0];
 
-  const [fields,    setFields]    = useState({ name: '', phone: '', service: '', date: '', timePreference: '', message: '' });
-  const [errors,    setErrors]    = useState({});
+  const [fields, setFields] = useState({ name: '', phone: '', service: '', date: '', timePreference: '', message: '' });
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -169,7 +169,7 @@ export default function Contact() {
                           <button type="submit" className="btn btn--primary btn--lg" id="submit-appointment-btn" style={{ flex: 1, justifyContent: 'center' }}>
                             📅 WhatsApp वर पाठवा
                           </button>
-                          <a href="tel:+919404338713" className="btn btn--outline btn--lg" id="call-now-btn" style={{ flex: 1, justifyContent: 'center' }}>
+                          <a href="tel:+918308465188" className="btn btn--outline btn--lg" id="call-now-btn" style={{ flex: 1, justifyContent: 'center' }}>
                             📞 आत्ता फोन करा
                           </a>
                         </div>
@@ -202,7 +202,7 @@ export default function Contact() {
                       {isPhone ? (
                         <div className="contact-info-card__value">
                           <a href="tel:+919404338713">📱 9404338713</a><br />
-                          <a href="tel:+919404338713">📱 9404338713</a>
+                          <a href="tel:+918308465188">📱 8308465188</a>
                         </div>
                       ) : isHours ? (
                         <div className="contact-info-card__value" style={{ fontSize: 'var(--fs-sm)' }}>
@@ -222,7 +222,7 @@ export default function Contact() {
 
                 {/* WhatsApp Card */}
                 <a href="https://wa.me/919404338713" target="_blank" rel="noreferrer"
-                   className="contact-info-card" style={{ cursor: 'pointer', textDecoration: 'none' }}>
+                  className="contact-info-card" style={{ cursor: 'pointer', textDecoration: 'none' }}>
                   <div className="contact-info-card__icon" style={{ background: '#25D366' }}>💬</div>
                   <div>
                     <div className="contact-info-card__label">WhatsApp</div>
@@ -235,8 +235,8 @@ export default function Contact() {
               <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-6)', flexWrap: 'wrap' }}>
                 <a href="tel:+919404338713" className="btn btn--primary" id="contact-call1-btn" style={{ flex: 1, justifyContent: 'center' }}>📞 9404338713</a>
                 <a href="https://wa.me/919404338713" target="_blank" rel="noreferrer"
-                   className="btn btn--outline" id="contact-whatsapp-btn"
-                   style={{ flex: 1, justifyContent: 'center', borderColor: '#25D366', color: '#25D366' }}>💬 WhatsApp</a>
+                  className="btn btn--outline" id="contact-whatsapp-btn"
+                  style={{ flex: 1, justifyContent: 'center', borderColor: '#25D366', color: '#25D366' }}>💬 WhatsApp</a>
               </div>
             </div>
           </div>
