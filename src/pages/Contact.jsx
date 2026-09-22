@@ -78,7 +78,7 @@ export default function Contact() {
       `\nधन्यवाद!`
     );
     setSubmitted(true);
-    setTimeout(() => window.open(`https://wa.me/918308465188?text=${msg}`, '_blank'), 800);
+    setTimeout(() => window.open(`https://wa.me/919404338713?text=${msg}`, '_blank'), 800);
   };
 
   return (
@@ -104,7 +104,7 @@ export default function Contact() {
                     <p className="form-success__msg">
                       आपली भेट विनंती यशस्वीरीत्या पाठवली गेली.<br />
                       WhatsApp वर आमचा प्रतिसाद लवकरच येईल.<br /><br />
-                      <strong>📞 8308465188 | 9404338713</strong>
+                      <strong>📞 9404338713 | 8308465188</strong>
                     </p>
                     <br />
                     <Link to="/" className="btn btn--primary">🏠 मुखपृष्ठावर परत</Link>
@@ -169,7 +169,7 @@ export default function Contact() {
                           <button type="submit" className="btn btn--primary btn--lg" id="submit-appointment-btn" style={{ flex: 1, justifyContent: 'center' }}>
                             📅 WhatsApp वर पाठवा
                           </button>
-                          <a href="tel:+918308465188" className="btn btn--outline btn--lg" id="call-now-btn" style={{ flex: 1, justifyContent: 'center' }}>
+                          <a href="tel:+919404338713" className="btn btn--outline btn--lg" id="call-now-btn" style={{ flex: 1, justifyContent: 'center' }}>
                             📞 आत्ता फोन करा
                           </a>
                         </div>
@@ -201,7 +201,7 @@ export default function Contact() {
                       <div className="contact-info-card__label">{label}</div>
                       {isPhone ? (
                         <div className="contact-info-card__value">
-                          <a href="tel:+918308465188">📱 8308465188</a><br />
+                          <a href="tel:+919404338713">📱 9404338713</a><br />
                           <a href="tel:+919404338713">📱 9404338713</a>
                         </div>
                       ) : isHours ? (
@@ -221,20 +221,20 @@ export default function Contact() {
                 ))}
 
                 {/* WhatsApp Card */}
-                <a href="https://wa.me/918308465188" target="_blank" rel="noreferrer"
+                <a href="https://wa.me/919404338713" target="_blank" rel="noreferrer"
                    className="contact-info-card" style={{ cursor: 'pointer', textDecoration: 'none' }}>
                   <div className="contact-info-card__icon" style={{ background: '#25D366' }}>💬</div>
                   <div>
                     <div className="contact-info-card__label">WhatsApp</div>
-                    <div className="contact-info-card__value">8308465188</div>
+                    <div className="contact-info-card__value">9404338713</div>
                     <div className="contact-info-card__sub">क्लिक करा व अपॉइंटमेंट बुक करा</div>
                   </div>
                 </a>
               </div>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-6)', flexWrap: 'wrap' }}>
-                <a href="tel:+918308465188" className="btn btn--primary" id="contact-call1-btn" style={{ flex: 1, justifyContent: 'center' }}>📞 8308465188</a>
-                <a href="https://wa.me/918308465188" target="_blank" rel="noreferrer"
+                <a href="tel:+919404338713" className="btn btn--primary" id="contact-call1-btn" style={{ flex: 1, justifyContent: 'center' }}>📞 9404338713</a>
+                <a href="https://wa.me/919404338713" target="_blank" rel="noreferrer"
                    className="btn btn--outline" id="contact-whatsapp-btn"
                    style={{ flex: 1, justifyContent: 'center', borderColor: '#25D366', color: '#25D366' }}>💬 WhatsApp</a>
               </div>

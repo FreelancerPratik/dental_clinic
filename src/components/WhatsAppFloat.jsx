@@ -10,7 +10,7 @@ const WhatsAppIcon = () => (
 export default function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/918308465188?text=नमस्कार%20डॉ.%20जवर्डीकर%2C%20मला%20भेटीची%20विनंती%20करायची%20आहे."
+      href="https://wa.me/919404338713?text=नमस्कार%20डॉ.%20जवर्डीकर%2C%20मला%20भेटीची%20विनंती%20करायची%20आहे."
       target="_blank"
       rel="noreferrer"
       className="whatsapp-float"

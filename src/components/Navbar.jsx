@@ -114,7 +114,7 @@ export default function Navbar() {
           📅 अपॉइंटमेंट घ्या
         </Link>
         <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
-          <a href="tel:+918308465188" className="btn btn--primary btn--sm">📞 8308465188</a>
+          <a href="tel:+919404338713" className="btn btn--primary btn--sm">📞 9404338713</a>
           <a href="tel:+919404338713" className="btn btn--ghost btn--sm">📞 9404338713</a>
         </div>
       </div>

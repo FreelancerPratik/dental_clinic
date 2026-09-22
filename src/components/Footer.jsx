@@ -26,9 +26,9 @@ export default function Footer() {
               निदान व वैयक्तिक काळजीसह सर्वोत्तम दंत उपचार.
             </p>
             <div className="footer__social">
-              <a href="https://wa.me/918308465188" target="_blank" rel="noreferrer"
+              <a href="https://wa.me/919404338713" target="_blank" rel="noreferrer"
                  className="footer__social-btn" aria-label="WhatsApp"><WhatsAppIcon /></a>
-              <a href="tel:+918308465188" className="footer__social-btn" aria-label="Phone">📞</a>
+              <a href="tel:+919404338713" className="footer__social-btn" aria-label="Phone">📞</a>
               <a href="https://www.facebook.com" target="_blank" rel="noreferrer"
                  className="footer__social-btn" aria-label="Facebook">f</a>
               <a href="https://www.instagram.com" target="_blank" rel="noreferrer"
@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="footer__contact-item">
               <span className="footer__contact-icon">📞</span>
               <div className="footer__contact-text">
-                <a href="tel:+918308465188">8308465188</a><br />
+                <a href="tel:+919404338713">9404338713</a><br />
                 <a href="tel:+919404338713">9404338713</a>
               </div>
             </div>

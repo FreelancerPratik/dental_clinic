@@ -50,7 +50,7 @@ export default function HeroSection() {
 
         <div className="hero__phone hero-animate-5">
           <div className="hero__phone-item">
-            <span>📞</span><a href="tel:+918308465188">8308465188</a>
+            <span>📞</span><a href="tel:+919404338713">9404338713</a>
           </div>
           <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.25)' }} />
           <div className="hero__phone-item">
