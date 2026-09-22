@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="डॉ. जवर्डीकर दातांचा दवाखाना — सर्व दंत उपचार सेवा: रूट कॅनाल, डेंटल इम्प्लांट्स, क्राऊन-ब्रिज, कॉस्मेटिक डेंटिस्ट्री, Full Mouth Rehabilitation." />
+  <title>सेवा | डॉ. जवर्डीकर दातांचा दवाखाना</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .services-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+    }
+    @media (max-width: 768px) { .services-full-grid { grid-template-columns: 1fr; } }
+
+    .service-full-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(201,149,42,0.1);
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-full-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(201,149,42,0.3);
+    }
+    .service-full-card__header {
+      background: var(--gradient-dark);
+      padding: var(--space-8);
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+    }
+    .service-full-card__icon-big {
+      font-size: 3rem;
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-gold);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-gold);
+    }
+    .service-full-card__header-text { flex: 1; }
+    .service-full-card__marathi {
+      font-family: var(--font-devanagari);
+      font-size: var(--fs-xl);
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.2;
+    }
+    .service-full-card__en {
+      font-size: var(--fs-sm);
+      color: var(--color-gold-light);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-top: var(--space-1);
+    }
+    .service-full-card__body {
+      padding: var(--space-8);
+      flex: 1;
+    }
+    .service-full-card__desc {
+      font-size: var(--fs-base);
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: var(--space-5);
+    }
+    .service-full-card__points {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .service-full-card__point {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-2);
+      font-size: var(--fs-sm);
+      color: var(--color-text);
+    }
+    .service-full-card__point::before {
+      content: '✓';
+      width: 20px;
+      height: 20px;
+      background: var(--gradient-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brown);
+      font-size: 0.65rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .service-full-card__footer {
+      padding: 0 var(--space-8) var(--space-8);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar--scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Dr. Javardikar Dental Clinic Home">
+        <div class="navbar__logo-icon" aria-hidden="true">🦷</div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">डॉ. जवर्डीकर</span>
+          <span class="navbar__logo-sub">Dental Clinic</span>
+        </div>
+      </a>
+      <nav class="navbar__nav" aria-label="Page links">
+        <a href="index.html"    class="navbar__link" id="nav-home">मुखपृष्ठ</a>
+        <a href="services.html" class="navbar__link active" id="nav-services">सेवा</a>
+        <a href="about.html"    class="navbar__link" id="nav-about">डॉक्टरांबद्दल</a>
+        <a href="contact.html"  class="navbar__link navbar__cta" id="nav-contact">📅 अपॉइंटमेंट</a>
+      </nav>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile" id="mobileMenu" role="menu">
+      <a href="index.html"    class="navbar__link" role="menuitem">🏠 मुखपृष्ठ</a>
+      <a href="services.html" class="navbar__link active" role="menuitem">🦷 सेवा</a>
+      <a href="about.html"    class="navbar__link" role="menuitem">👨‍⚕️ डॉक्टरांबद्दल</a>
+      <a href="contact.html"  class="navbar__link" role="menuitem">📅 अपॉइंटमेंट घ्या</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Services Page Hero">
+    <div class="container page-hero__content">
+      <div class="section-label" style="color:var(--color-gold);margin-bottom:var(--space-3);">Our Services</div>
+      <h1 class="page-hero__title">आमच्या <span>दंत सेवा</span></h1>
+      <p class="page-hero__subtitle">आधुनिक तंत्रज्ञान • अचूक उपचार • वैयक्तिक काळजी</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">मुखपृष्ठ</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>सेवा</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- SERVICES INTRO -->
+  <section class="section section--cream" aria-label="Services introduction">
+    <div class="container">
+      <div class="text-center reveal" style="max-width:700px;margin:0 auto var(--space-12);">
+        <div class="section-label">संपूर्ण दंत काळजी</div>
+        <h2 class="section-title">आमच्या येथे <span>उपलब्ध उपचार</span></h2>
+        <div class="gold-divider gold-divider--center"></div>
+        <p class="section-subtitle">डॉ. मंथन प्र. जवर्डीकर यांच्या मार्गदर्शनाखाली सर्व प्रकारचे दंत उपचार एकाच ठिकाणी</p>
+      </div>
+
+      <div class="services-full-grid">
+        <!-- 1. Dental Examination -->
+        <article class="service-full-card reveal reveal-delay-1" id="checkup">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">🔍</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">दातांची तपासणी व सर्वसाधारण दंत उपचार</div>
+              <div class="service-full-card__en">Dental Examination & General Treatment</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              आपल्या दातांच्या सर्वांगीण तपासणीसाठी डॉ. जवर्डीकर आधुनिक साधनांचा वापर करतात. प्रत्येक रुग्णाच्या दातांची, हिरड्यांची व तोंडाची संपूर्ण तपासणी करून योग्य उपचार योजना तयार केली जाते.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Digital X-Ray द्वारे अचूक तपासणी</div>
+              <div class="service-full-card__point">हिरड्यांची व दातांची संपूर्ण तपासणी</div>
+              <div class="service-full-card__point">व्यक्तिगत उपचार योजना</div>
+              <div class="service-full-card__point">दातांचे आरोग्य राखण्यासाठी सल्ला</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 2. Cleaning & Polishing -->
+        <article class="service-full-card reveal reveal-delay-2" id="cleaning">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">✨</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">दातांची स्वच्छता व पॉलिशिंग</div>
+              <div class="service-full-card__en">Scaling & Polishing</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              प्रोफेशनल स्केलिंग व पॉलिशिंगद्वारे दातांवरील प्लॅक, टार्टर व डाग काढले जातात. यामुळे दात चमकदार होतात व हिरड्यांचे आजार (Gum Disease) रोखले जातात.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">अल्ट्रासॉनिक स्केलिंग</div>
+              <div class="service-full-card__point">डाग व पिवळसरपणा दूर</div>
+              <div class="service-full-card__point">हिरड्यांचे आरोग्य सुधारणे</div>
+              <div class="service-full-card__point">श्वासाची दुर्गंधी कमी करणे</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 3. Root Canal -->
+        <article class="service-full-card reveal reveal-delay-1" id="rct">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">🦷</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">रूट कॅनाल उपचार</div>
+              <div class="service-full-card__en">Root Canal Treatment (RCT)</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              आधुनिक रोटरी एंडोडोंटिक्स तंत्राने वेदनारहित रूट कॅनाल उपचार केले जातात. संक्रमित किंवा मृत दाताचा गर (Pulp) काढून दात वाचवला जातो.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Rotary Endodontics तंत्र</div>
+              <div class="service-full-card__point">वेदनारहित व जलद उपचार</div>
+              <div class="service-full-card__point">एकाच बैठकीत RCT शक्य</div>
+              <div class="service-full-card__point">उपचारानंतर क्राऊन बसवणे</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 4. Crown & Bridge -->
+        <article class="service-full-card reveal reveal-delay-2" id="crown">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">👑</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">क्राऊन व ब्रिज</div>
+              <div class="service-full-card__en">Crown & Bridge</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              तुटलेले, खराब झालेले किंवा RCT झालेल्या दातांवर उच्च दर्जाचे Zirconia, PFM किंवा Metal Crown बसवले जाते. शेजारच्या दातांचा आधार घेऊन ब्रिज बनवला जातो.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Zirconia, PFM, Metal Crown उपलब्ध</div>
+              <div class="service-full-card__point">नैसर्गिक दिसणारे व टिकाऊ</div>
+              <div class="service-full-card__point">गेलेल्या दाताऐवजी ब्रिज</div>
+              <div class="service-full-card__point">डिजिटल इम्प्रेशन तंत्र</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 5. Cosmetic Dentistry -->
+        <article class="service-full-card reveal reveal-delay-1" id="cosmetic">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">😊</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">कॉस्मेटिक डेंटिस्ट्री व स्माईल डिझाईन</div>
+              <div class="service-full-card__en">Cosmetic Dentistry & Smile Design</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              तुमचे हास्य अधिक सुंदर, आत्मविश्वासपूर्ण बनवण्यासाठी डिजिटल स्माईल डिझाईन, व्हिनिअर्स, टीथ व्हाईटनिंग आणि बॉन्डिंग सेवा उपलब्ध.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Digital Smile Design</div>
+              <div class="service-full-card__point">Porcelain Veneers</div>
+              <div class="service-full-card__point">Teeth Whitening / Bleaching</div>
+              <div class="service-full-card__point">Composite Bonding</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 6. Dental Implants -->
+        <article class="service-full-card reveal reveal-delay-2" id="implants">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">🔩</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">डेंटल इम्प्लांट्स</div>
+              <div class="service-full-card__en">Dental Implants</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              गेलेल्या दाताऐवजी टायटॅनियम इम्प्लांट हाडात बसवला जातो, ज्यावर क्राऊन लावले जाते. हे नैसर्गिक दातासारखे दिसते व टिकाऊ असते. डॉ. जवर्डीकर MDS Implantology विशेषज्ञ आहेत.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Titanium Implant — दीर्घकाळ टिकाऊ</div>
+              <div class="service-full-card__point">नैसर्गिक दातासारखा अनुभव</div>
+              <div class="service-full-card__point">Single &amp; Multiple Implants</div>
+              <div class="service-full-card__point">MDS Implantology विशेषज्ञ डॉक्टर</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 7. Dentures -->
+        <article class="service-full-card reveal reveal-delay-1" id="dentures">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">🦴</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">पूर्ण व अंशत: कबळी</div>
+              <div class="service-full-card__en">Complete & Partial Dentures</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              सर्व किंवा काही दात गेलेल्यांसाठी उच्च दर्जाची Removable व Fixed Dentures बनवल्या जातात. आरामदायक, नैसर्गिक दिसणाऱ्या व टिकाऊ कबळी.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Acrylic &amp; Flexible Partial Dentures</div>
+              <div class="service-full-card__point">Complete Dentures (Upper &amp; Lower)</div>
+              <div class="service-full-card__point">Implant-Supported Dentures</div>
+              <div class="service-full-card__point">आरामदायक व नैसर्गिक दिसणारे</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 8. Teeth Wear -->
+        <article class="service-full-card reveal reveal-delay-2" id="wear">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">⚙️</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">दातांची झीज व चावण्याशी संबंधित उपचार</div>
+              <div class="service-full-card__en">Teeth Wear & Bite Treatment</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              दात झिजणे (Bruxism), चावणे कठीण जाणे, जबड्यात दुखणे या समस्यांसाठी विशेष उपचार. Occlusal Splint, Bite Rehabilitation आणि इतर उपचार उपलब्ध.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Bruxism (दात घासणे) उपचार</div>
+              <div class="service-full-card__point">Night Guard / Occlusal Splint</div>
+              <div class="service-full-card__point">Bite Correction</div>
+              <div class="service-full-card__point">TMJ विकार उपचार</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 9. Fixed & Removable -->
+        <article class="service-full-card reveal reveal-delay-1" id="fixed-removable">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">🔧</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">फिक्सड व रिमूव्हेबल दंत उपचार</div>
+              <div class="service-full-card__en">Fixed & Removable Prosthetics</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              रुग्णाच्या गरजेनुसार Fixed (कायमस्वरूपी) किंवा Removable (काढता येण्याजोगे) दंत उपचार उपलब्ध. Prosthodontics मध्ये MDS असलेले डॉ. जवर्डीकर सर्वोत्तम सल्ला देतात.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">Fixed Partial Denture (Bridge)</div>
+              <div class="service-full-card__point">Removable Partial Denture</div>
+              <div class="service-full-card__point">Overdenture</div>
+              <div class="service-full-card__point">Prosthodontics विशेषज्ञ सल्ला</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+
+        <!-- 10. Full Mouth Rehab -->
+        <article class="service-full-card reveal reveal-delay-2" id="fmr">
+          <div class="service-full-card__header">
+            <div class="service-full-card__icon-big">🌟</div>
+            <div class="service-full-card__header-text">
+              <div class="service-full-card__marathi">पूर्ण तोंडाचे पुनर्वसन</div>
+              <div class="service-full-card__en">Full Mouth Rehabilitation</div>
+            </div>
+          </div>
+          <div class="service-full-card__body">
+            <p class="service-full-card__desc">
+              संपूर्ण तोंडाच्या दातांची झीज, गळती, तुटणे अशा जटिल समस्यांसाठी सर्वसमावेशक Full Mouth Rehabilitation केली जाते. यात Implants, Crowns, Veneers यांचा समन्वय केला जातो.
+            </p>
+            <div class="service-full-card__points">
+              <div class="service-full-card__point">सर्वसमावेशक उपचार योजना</div>
+              <div class="service-full-card__point">Implants + Crowns + Veneers</div>
+              <div class="service-full-card__point">संपूर्ण हास्याचे रूपांतर</div>
+              <div class="service-full-card__point">Prosthodontics विशेषज्ञ डॉक्टरांकडून</div>
+            </div>
+          </div>
+          <div class="service-full-card__footer">
+            <a href="contact.html" class="btn btn--primary btn--sm">भेट बुक करा</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT CTA BANNER -->
+  <section class="appt-banner" aria-label="Book Appointment">
+    <div class="container">
+      <div class="appt-banner__inner">
+        <div class="appt-banner__text reveal reveal--left">
+          <h2>तपासणीसाठी आजच भेट द्या!</h2>
+          <p>आमच्याशी संपर्क करा आणि आपल्या दातांच्या समस्येतून मुक्त व्हा.</p>
+        </div>
+        <div class="appt-banner__actions reveal reveal--right">
+          <div class="appt-banner__phone">
+            <span>📞</span>
+            <div>
+              <a href="tel:+918308465188" style="color:var(--color-brown);font-size:var(--fs-xl);font-weight:800;display:block;">8308465188</a>
+              <a href="tel:+919404338713" style="color:rgba(45,27,0,0.7);font-size:var(--fs-base);font-weight:600;">9404338713</a>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn--white btn--lg" id="services-book-btn">📅 अपॉइंटमेंट बुक करा</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">डॉ. जवर्डीकर</div>
+          <div class="footer__brand-sub">Dental Clinic — Anjangaon Surji</div>
+          <p class="footer__brand-desc">आपल्या दातांचे आरोग्य व सुंदर हास्य हे आमचे ध्येय.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/918308465188" target="_blank" class="footer__social-btn" aria-label="WhatsApp">💬</a>
+            <a href="tel:+918308465188" class="footer__social-btn" aria-label="Phone">📞</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Quick Links</h3>
+          <nav class="footer__links">
+            <a href="index.html">→ मुखपृष्ठ</a>
+            <a href="services.html">→ सेवा</a>
+            <a href="about.html">→ डॉक्टरांबद्दल</a>
+            <a href="contact.html">→ अपॉइंटमेंट</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">सेवा</h3>
+          <nav class="footer__links">
+            <a href="#rct">→ रूट कॅनाल</a>
+            <a href="#implants">→ डेंटल इम्प्लांट्स</a>
+            <a href="#crown">→ क्राऊन व ब्रिज</a>
+            <a href="#cosmetic">→ कॉस्मेटिक</a>
+            <a href="#fmr">→ Full Mouth Rehab</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">संपर्क</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📍</span>
+            <div class="footer__contact-text">शिक्षक कॉलनी, डी.पी.रोड,<br>अंजनगाव सुर्जी, जि. अमरावती</div>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📞</span>
+            <div class="footer__contact-text">
+              <a href="tel:+918308465188">8308465188</a> / <a href="tel:+919404338713">9404338713</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="currentYear"></span> डॉ. जवर्डीकर दातांचा दवाखाना. सर्व हक्क राखीव.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918308465188" target="_blank" class="whatsapp-float" id="whatsapp-btn" aria-label="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

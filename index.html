@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="डॉ. जवर्डीकर दातांचा दवाखाना — अंजनगाव सुर्जी. आधुनिक दंत उपचार, डेंटल इम्प्लांट्स, क्राऊन-ब्रिज, कॉस्मेटिक डेंटिस्ट्री. Dr. Manthan Javardikar BDS MDS (Prosthodontics)." />
+  <meta name="keywords" content="dental clinic anjangaon surji, dentist amravati, दंत चिकित्सा, dental implants, root canal, cosmetic dentistry, javardikar" />
+  <meta property="og:title" content="डॉ. जवर्डीकर दातांचा दवाखाना | Anjangaon Surji" />
+  <meta property="og:description" content="Expert dental care with modern technology. BDS MDS Prosthodontics, Crown & Bridge, Implantology." />
+  <meta property="og:type" content="website" />
+  <title>डॉ. जवर्डीकर दातांचा दवाखाना | Dr. Javardikar Dental Clinic</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .services-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+    @media (max-width: 1024px) { .services-preview-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .services-preview-grid { grid-template-columns: 1fr; } }
+    .hero-mini-stats { display: flex; gap: var(--space-8); flex-wrap: wrap; margin-top: var(--space-10); }
+    .hero-mini-stat { text-align: left; }
+    .hero-mini-stat__num { font-family: var(--font-heading); font-size: var(--fs-3xl); font-weight: 700; color: var(--color-gold-light); line-height: 1; }
+    .hero-mini-stat__label { font-size: var(--fs-xs); color: rgba(255,255,255,0.6); letter-spacing: 0.06em; text-transform: uppercase; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
+    @media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .why-grid { grid-template-columns: 1fr; } }
+    .input--error  { border-color: #ef4444 !important; }
+    .input--success { border-color: #22c55e !important; }
+    .field-error { font-size: var(--fs-xs); color: #ef4444; margin-top: var(--space-1); display: none; }
+    @media (max-width: 640px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar--transparent" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Dr. Javardikar Dental Clinic Home">
+        <div class="navbar__logo-icon" aria-hidden="true">🦷</div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">डॉ. जवर्डीकर</span>
+          <span class="navbar__logo-sub">Dental Clinic</span>
+        </div>
+      </a>
+      <nav class="navbar__nav" aria-label="Page links">
+        <a href="index.html"    class="navbar__link" id="nav-home">मुखपृष्ठ</a>
+        <a href="services.html" class="navbar__link" id="nav-services">सेवा</a>
+        <a href="about.html"    class="navbar__link" id="nav-about">डॉक्टरांबद्दल</a>
+        <a href="contact.html"  class="navbar__link navbar__cta" id="nav-contact">📅 अपॉइंटमेंट</a>
+      </nav>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile" id="mobileMenu" role="menu">
+      <a href="index.html"    class="navbar__link" role="menuitem">🏠 मुखपृष्ठ</a>
+      <a href="services.html" class="navbar__link" role="menuitem">🦷 सेवा</a>
+      <a href="about.html"    class="navbar__link" role="menuitem">👨‍⚕️ डॉक्टरांबद्दल</a>
+      <a href="contact.html"  class="navbar__link" role="menuitem">📅 अपॉइंटमेंट घ्या</a>
+      <div style="display:flex; gap: 1rem; margin-top: 0.5rem;">
+        <a href="tel:+918308465188" class="btn btn--primary btn--sm">📞 8308465188</a>
+        <a href="tel:+919404338713" class="btn btn--ghost btn--sm">📞 9404338713</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <div class="hero__bg-image" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__particles" aria-hidden="true">
+      <span class="particle particle--1">🦷</span>
+      <span class="particle particle--2">✨</span>
+      <span class="particle particle--3">🦷</span>
+      <span class="particle particle--4">⭐</span>
+      <span class="particle particle--5">🦷</span>
+      <span class="particle particle--6">✨</span>
+      <span class="particle particle--7">🦷</span>
+      <span class="particle particle--8">⭐</span>
+    </div>
+    <div class="hero__content container">
+      <div class="hero-animate-1">
+        <span class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          <span class="hero__badge-text">अंजनगाव सुर्जी, जि. अमरावती</span>
+        </span>
+      </div>
+      <h1 class="hero__title-marathi hero-animate-2">डॉ. जवर्डीकर</h1>
+      <p class="hero__title-sub hero-animate-2">दातांचा दवाखाना</p>
+      <p class="hero__tagline hero-animate-3">आपल्या दातांचे आरोग्य… आपल्या सुंदर हास्यासाठी!</p>
+      <div class="hero-animate-4">
+        <p class="hero__doctor">डॉ. मंथन प्र. जवर्डीकर</p>
+        <p class="hero__credentials">B.D.S., M.D.S. &nbsp;|&nbsp; Prosthodontics, Crown &amp; Bridge and Implantology</p>
+      </div>
+      <div class="hero__actions hero-animate-5">
+        <a href="contact.html" class="btn btn--primary btn--lg" id="hero-appointment-btn">📅 भेट बुक करा</a>
+        <a href="services.html" class="btn btn--ghost btn--lg" id="hero-services-btn">आमच्या सेवा पाहा</a>
+      </div>
+      <div class="hero__phone hero-animate-5">
+        <div class="hero__phone-item">
+          <span>📞</span><a href="tel:+918308465188">8308465188</a>
+        </div>
+        <div style="width:1px;height:20px;background:rgba(255,255,255,0.25);"></div>
+        <div class="hero__phone-item">
+          <span>📞</span><a href="tel:+919404338713">9404338713</a>
+        </div>
+      </div>
+      <div class="hero-mini-stats hero-animate-5">
+        <div class="hero-mini-stat">
+          <div class="hero-mini-stat__num">5000+</div>
+          <div class="hero-mini-stat__label">समाधानी रुग्ण</div>
+        </div>
+        <div class="hero-mini-stat">
+          <div class="hero-mini-stat__num">10+</div>
+          <div class="hero-mini-stat__label">वर्षांचा अनुभव</div>
+        </div>
+        <div class="hero-mini-stat">
+          <div class="hero-mini-stat__num">10</div>
+          <div class="hero-mini-stat__label">उपचार सेवा</div>
+        </div>
+        <div class="hero-mini-stat">
+          <div class="hero-mini-stat__num">98%</div>
+          <div class="hero-mini-stat__label">यशस्वी उपचार</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <span>खाली स्क्रोल करा</span><span style="font-size:1.2rem;">↓</span>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar" aria-label="Statistics">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div class="stat-card reveal">
+          <div class="stat-card__number" data-counter="5000" data-suffix="+" data-duration="2200">0</div>
+          <div class="stat-card__label">समाधानी रुग्ण</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-card__number" data-counter="10" data-suffix="+" data-duration="1800">0</div>
+          <div class="stat-card__label">वर्षांचा अनुभव</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-card__number" data-counter="10" data-suffix="" data-duration="1600">0</div>
+          <div class="stat-card__label">दंत उपचार सेवा</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-card__number" data-counter="98" data-suffix="%" data-duration="2000">0</div>
+          <div class="stat-card__label">यशस्वी उपचार दर</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section section--cream" id="services-preview" aria-label="Our Services">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">आमच्या सेवा</div>
+        <h2 class="section-title">आमच्या येथे उपलब्ध<br><span>दंत उपचार</span></h2>
+        <div class="gold-divider gold-divider--center"></div>
+        <p class="section-subtitle">आधुनिक तंत्रज्ञान व वैयक्तिक काळजीसह सर्वोत्तम दंत उपचार</p>
+      </div>
+      <div class="services-preview-grid">
+        <article class="service-card reveal reveal-delay-1" id="service-checkup">
+          <div class="service-card__icon">🔍</div>
+          <div class="service-card__title-marathi">दातांची तपासणी</div>
+          <div class="service-card__title-en">Dental Examination</div>
+          <p class="service-card__desc">सर्वसाधारण दंत तपासणी व उपचार. आपल्या दातांच्या समस्येचे योग्य निदान करून दीर्घकाळ टिकणारे उपचार.</p>
+        </article>
+        <article class="service-card reveal reveal-delay-2" id="service-cleaning">
+          <div class="service-card__icon">✨</div>
+          <div class="service-card__title-marathi">दातांची स्वच्छता व पॉलिशिंग</div>
+          <div class="service-card__title-en">Scaling &amp; Polishing</div>
+          <p class="service-card__desc">प्रोफेशनल दात स्वच्छता व पॉलिशिंगद्वारे दातांची चमक वाढवा आणि हिरड्यांचे आजार रोखा.</p>
+        </article>
+        <article class="service-card reveal reveal-delay-3" id="service-rct">
+          <div class="service-card__icon">🦷</div>
+          <div class="service-card__title-marathi">रूट कॅनाल उपचार</div>
+          <div class="service-card__title-en">Root Canal Treatment</div>
+          <p class="service-card__desc">आधुनिक तंत्रज्ञानाने वेदनारहित रूट कॅनाल उपचार. दात वाचवा, सुंदर हास्य जपा.</p>
+        </article>
+        <article class="service-card reveal reveal-delay-1" id="service-crown">
+          <div class="service-card__icon">👑</div>
+          <div class="service-card__title-marathi">क्राऊन व ब्रिज</div>
+          <div class="service-card__title-en">Crown &amp; Bridge</div>
+          <p class="service-card__desc">उच्च दर्जाचे क्राऊन व ब्रिज उपचार. तुटलेले किंवा खराब झालेले दात पुन्हा सुंदर बनवा.</p>
+        </article>
+        <article class="service-card reveal reveal-delay-2" id="service-cosmetic">
+          <div class="service-card__icon">😊</div>
+          <div class="service-card__title-marathi">कॉस्मेटिक डेंटिस्ट्री</div>
+          <div class="service-card__title-en">Cosmetic Dentistry &amp; Smile Design</div>
+          <p class="service-card__desc">स्माईल डिझाईन, व्हिनिअर्स, टीथ व्हाईटनिंगद्वारे आपले हास्य अधिक सुंदर बनवा.</p>
+        </article>
+        <article class="service-card reveal reveal-delay-3" id="service-implants">
+          <div class="service-card__icon">🔩</div>
+          <div class="service-card__title-marathi">डेंटल इम्प्लांट्स</div>
+          <div class="service-card__title-en">Dental Implants</div>
+          <p class="service-card__desc">गेलेल्या दाताऐवजी कायमस्वरूपी इम्प्लांट. टायटॅनियम इम्प्लांटद्वारे नैसर्गिक दातासारखा अनुभव.</p>
+        </article>
+      </div>
+      <div class="text-center" style="margin-top: var(--space-10);">
+        <a href="services.html" class="btn btn--primary btn--lg" id="view-all-services-btn">सर्व सेवा पाहा →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section section--dark" id="why-us" aria-label="Why Choose Us">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label" style="color:var(--color-gold);">आमची वैशिष्ट्ये</div>
+        <h2 class="section-title" style="color:var(--color-white);">आम्हाला का निवडावे?</h2>
+        <div class="gold-divider gold-divider--center"></div>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.6);">आपल्या दातांच्या समस्येचे योग्य निदान करून आपल्यासाठी योग्य आणि दीर्घकाळ टिकणाऱ्या उपचारांचा पर्याय</p>
+      </div>
+      <div class="why-grid">
+        <article class="feature-card reveal reveal-delay-1" id="feature-modern">
+          <div class="feature-card__icon">🖥️</div>
+          <h3 class="feature-card__title">आधुनिक तंत्रज्ञान</h3>
+          <div class="feature-card__title-en">Modern Technology</div>
+          <p class="feature-card__desc">डिजिटल एक्स-रे, OPG, आधुनिक यंत्रसामग्री वापरून अचूक निदान व उपचार.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-2" id="feature-accurate">
+          <div class="feature-card__icon">🎯</div>
+          <h3 class="feature-card__title">अचूक निदान</h3>
+          <div class="feature-card__title-en">Accurate Diagnosis</div>
+          <p class="feature-card__desc">प्रत्येक रुग्णाच्या समस्येचा सखोल अभ्यास करून अचूक व योग्य उपचार योजना.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-3" id="feature-personal">
+          <div class="feature-card__icon">🤝</div>
+          <h3 class="feature-card__title">वैयक्तिक काळजी</h3>
+          <div class="feature-card__title-en">Personal Care</div>
+          <p class="feature-card__desc">प्रत्येक रुग्णास वैयक्तिक लक्ष देऊन उपचार. तुमच्या आरामाची आमची जबाबदारी.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-4" id="feature-longlasting">
+          <div class="feature-card__icon">⏳</div>
+          <h3 class="feature-card__title">दीर्घकाळ टिकणारे</h3>
+          <div class="feature-card__title-en">Long-lasting Results</div>
+          <p class="feature-card__desc">उच्च दर्जाचे साहित्य व तंत्र वापरून दीर्घकाळ टिकणारे उपचार परिणाम.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR TEASER -->
+  <section class="section section--cream" id="about-teaser" aria-label="About Doctor">
+    <div class="container">
+      <div class="doctor-card">
+        <div class="doctor-card__image-wrap reveal reveal--left">
+          <img src="assets/images/doctor.jpg" alt="Dr. Manthan P. Javardikar — BDS MDS Prosthodontics" class="doctor-card__image" loading="lazy" />
+          <div class="doctor-card__badge" style="position:absolute;bottom:-1.25rem;right:-1.25rem;">
+            <div class="doctor-card__badge-years">10+</div>
+            <div class="doctor-card__badge-label">वर्षांचा अनुभव</div>
+          </div>
+        </div>
+        <div class="reveal reveal--right">
+          <div class="section-label">आपले डॉक्टर</div>
+          <h2 class="doctor-card__name-marathi">डॉ. मंथन प्र. जवर्डीकर</h2>
+          <p class="doctor-card__name-en">Dr. Manthan P. Javardikar</p>
+          <p class="doctor-card__qualifications">B.D.S., M.D.S.</p>
+          <div class="doctor-card__specialization">
+            <span>🏆</span> Prosthodontics, Crown &amp; Bridge and Implantology
+          </div>
+          <div class="doctor-card__features">
+            <div class="doctor-feature">
+              <div class="doctor-feature__check">✓</div>
+              <div><div class="doctor-feature__text">आधुनिक तंत्रज्ञान</div><div class="doctor-feature__sub">Digital X-Ray, OPG, Modern Equipment</div></div>
+            </div>
+            <div class="doctor-feature">
+              <div class="doctor-feature__check">✓</div>
+              <div><div class="doctor-feature__text">अचूक निदान</div><div class="doctor-feature__sub">Comprehensive dental diagnosis</div></div>
+            </div>
+            <div class="doctor-feature">
+              <div class="doctor-feature__check">✓</div>
+              <div><div class="doctor-feature__text">वैयक्तिक काळजी</div><div class="doctor-feature__sub">Personalized treatment for every patient</div></div>
+            </div>
+            <div class="doctor-feature">
+              <div class="doctor-feature__check">✓</div>
+              <div><div class="doctor-feature__text">दीर्घकाळ टिकणारे उपचार</div><div class="doctor-feature__sub">Long-lasting, quality dental treatments</div></div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <a href="about.html" class="btn btn--primary" id="learn-more-doctor-btn">अधिक जाणून घ्या</a>
+            <a href="contact.html" class="btn btn--outline" id="book-appointment-doctor-btn">📅 भेट बुक करा</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section--navy" id="process" aria-label="Appointment Process">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label" style="color:var(--color-gold);">सोपी प्रक्रिया</div>
+        <h2 class="section-title" style="color:var(--color-white);">भेट कशी घ्यावी?</h2>
+        <div class="gold-divider gold-divider--center"></div>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="process-step__number">1</div>
+          <h3 class="process-step__title" style="color:var(--color-white);">फोन करा</h3>
+          <p class="process-step__desc" style="color:rgba(255,255,255,0.6);">8308465188 किंवा 9404338713 वर संपर्क करा</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">2</div>
+          <h3 class="process-step__title" style="color:var(--color-white);">वेळ निश्चित करा</h3>
+          <p class="process-step__desc" style="color:rgba(255,255,255,0.6);">आपल्या सोयीनुसार वेळ व तारीख बुक करा</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">3</div>
+          <h3 class="process-step__title" style="color:var(--color-white);">तपासणी</h3>
+          <p class="process-step__desc" style="color:rgba(255,255,255,0.6);">डॉ. जवर्डीकर संपूर्ण तपासणी करतील</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">4</div>
+          <h3 class="process-step__title" style="color:var(--color-white);">उपचार</h3>
+          <p class="process-step__desc" style="color:rgba(255,255,255,0.6);">आधुनिक तंत्रज्ञानाने वेदनारहित उपचार</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section--cream" id="testimonials" aria-label="Patient Testimonials">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label">रुग्णांचे अनुभव</div>
+        <h2 class="section-title">आमचे <span>समाधानी रुग्ण</span></h2>
+        <div class="gold-divider gold-divider--center"></div>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <p class="testimonial-card__text">"डॉ. जवर्डीकर यांनी माझ्या रूट कॅनालचे उपचार इतक्या काळजीपूर्वक केले की मला जवळजवळ वेदनाच जाणवल्या नाहीत. खूप व्यावसायिक आणि दयाळू डॉक्टर आहेत."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">रा</div>
+                <div><div class="testimonial-card__name">राजेश पाटील</div><div class="testimonial-card__location">अंजनगाव सुर्जी</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <p class="testimonial-card__text">"माझे डेंटल इम्प्लांट्स इथे झाले. डॉक्टरांनी संपूर्ण प्रक्रिया नीट समजावून सांगितली. आता हास्यात खूप आत्मविश्वास आला आहे!"</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">सु</div>
+                <div><div class="testimonial-card__name">सुनीता देशमुख</div><div class="testimonial-card__location">अमरावती</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <p class="testimonial-card__text">"कॉस्मेटिक डेंटिस्ट्री नंतर माझे हास्य पूर्णपणे बदलले. डॉ. जवर्डीकर यांचे कौशल्य आणि आधुनिक तंत्रज्ञान वापर खरोखरच प्रभावशाली आहे."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">प्र</div>
+                <div><div class="testimonial-card__name">प्रिया शिंदे</div><div class="testimonial-card__location">अंजनगाव सुर्जी</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <p class="testimonial-card__text">"क्राऊन व ब्रिजचे उपचार अत्यंत उत्तम झाले. दवाखान्याची स्वच्छता व डॉक्टरांची आपुलकी खूप चांगली आहे. मी सर्व नातेवाइकांना इथे पाठवतो."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">वि</div>
+                <div><div class="testimonial-card__name">विजय कुलकर्णी</div><div class="testimonial-card__location">चांदूर बाजार</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <p class="testimonial-card__text">"माझ्या मुलाच्या दातांचे उपचार इथे झाले. डॉक्टरांनी मुलाला खूप सहजतेने हाताळले. मुलाला बिलकुल भीती वाटली नाही. धन्यवाद डॉक्टर!"</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">अ</div>
+                <div><div class="testimonial-card__name">अनिता जोशी</div><div class="testimonial-card__location">परतवाडा</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots" role="tablist" aria-label="Testimonial navigation">
+        <button class="slider-dot active" role="tab" aria-label="Testimonial 1"></button>
+        <button class="slider-dot" role="tab" aria-label="Testimonial 2"></button>
+        <button class="slider-dot" role="tab" aria-label="Testimonial 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT CTA BANNER -->
+  <section class="appt-banner" id="cta-banner" aria-label="Book Appointment">
+    <div class="container">
+      <div class="appt-banner__inner">
+        <div class="appt-banner__text reveal reveal--left">
+          <h2>तपासणीसाठी आजच भेट द्या!</h2>
+          <p>आमच्याशी संपर्क करा आणि आपल्या दातांच्या समस्येतून मुक्त व्हा.</p>
+        </div>
+        <div class="appt-banner__actions reveal reveal--right">
+          <div class="appt-banner__phone">
+            <span>📞</span>
+            <div>
+              <a href="tel:+918308465188" style="color:var(--color-brown);font-size:var(--fs-xl);font-weight:800;display:block;">8308465188</a>
+              <a href="tel:+919404338713" style="color:rgba(45,27,0,0.7);font-size:var(--fs-base);font-weight:600;">9404338713</a>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn--white btn--lg" id="cta-book-btn">📅 अपॉइंटमेंट बुक करा</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">डॉ. जवर्डीकर</div>
+          <div class="footer__brand-sub">Dental Clinic — Anjangaon Surji</div>
+          <p class="footer__brand-desc">आपल्या दातांचे आरोग्य व सुंदर हास्य हे आमचे ध्येय. आधुनिक तंत्रज्ञान, अचूक निदान व वैयक्तिक काळजीसह सर्वोत्तम दंत उपचार.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/918308465188" target="_blank" class="footer__social-btn" aria-label="WhatsApp">💬</a>
+            <a href="tel:+918308465188" class="footer__social-btn" aria-label="Phone">📞</a>
+            <a href="https://www.facebook.com" target="_blank" class="footer__social-btn" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com" target="_blank" class="footer__social-btn" aria-label="Instagram">📷</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Quick Links</h3>
+          <nav class="footer__links">
+            <a href="index.html">→ मुखपृष्ठ</a>
+            <a href="services.html">→ सेवा</a>
+            <a href="about.html">→ डॉक्टरांबद्दल</a>
+            <a href="contact.html">→ संपर्क</a>
+            <a href="contact.html">→ अपॉइंटमेंट</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">सेवा</h3>
+          <nav class="footer__links">
+            <a href="services.html#rct">→ रूट कॅनाल</a>
+            <a href="services.html#implants">→ डेंटल इम्प्लांट्स</a>
+            <a href="services.html#crown">→ क्राऊन व ब्रिज</a>
+            <a href="services.html#cosmetic">→ कॉस्मेटिक</a>
+            <a href="services.html#dentures">→ कबळी</a>
+            <a href="services.html#fmr">→ Full Mouth Rehab</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">संपर्क</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📍</span>
+            <div class="footer__contact-text">शिक्षक कॉलनी, डी.पी.रोड,<br>अंजनगाव सुर्जी, जि. अमरावती</div>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📞</span>
+            <div class="footer__contact-text">
+              <a href="tel:+918308465188">8308465188</a><br>
+              <a href="tel:+919404338713">9404338713</a>
+            </div>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">🕐</span>
+            <div class="footer__contact-text">सोम–शनि: सकाळी 9 – संध्याकाळी 7<br>रविवार: सकाळी 9 – दुपारी 1</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="currentYear"></span> डॉ. जवर्डीकर दातांचा दवाखाना. सर्व हक्क राखीव.</p>
+        <p>Designed with ❤️ for Dr. Manthan P. Javardikar</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/918308465188?text=नमस्कार%20डॉ.%20जवर्डीकर%2C%20मला%20भेटीची%20विनंती%20करायची%20आहे." target="_blank" class="whatsapp-float" id="whatsapp-btn" aria-label="Chat on WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span>WhatsApp वर चॅट करा</span>
+  </a>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

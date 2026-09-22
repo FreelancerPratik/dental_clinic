@@ -1,0 +1,4 @@
+/* src/styles/index.css — Global entry: import all design layers */
+@import './styles/style.css';
+@import './styles/components.css';
+@import './styles/animations.css';

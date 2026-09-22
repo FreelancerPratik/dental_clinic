@@ -1,0 +1,333 @@
+/* ============================================================
+   Dr. Javardikar Dental Clinic — Global Design System
+   style.css
+   ============================================================ */
+
+/* ---- Google Fonts Import ---- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+/* ---- CSS Custom Properties (Design Tokens) ---- */
+:root {
+  /* Colors */
+  --color-gold:        #C9952A;
+  --color-gold-light:  #E5B84A;
+  --color-gold-dark:   #9A6E1A;
+  --color-gold-pale:   #F5E6C0;
+  --color-brown:       #2D1B00;
+  --color-brown-mid:   #5C3D11;
+  --color-cream:       #FDF6E9;
+  --color-cream-dark:  #F0E4C8;
+  --color-navy:        #0D1B2A;
+  --color-navy-mid:    #1A3348;
+  --color-teal:        #0A4A4A;
+  --color-teal-light:  #0E6B6B;
+  --color-white:       #FFFFFF;
+  --color-text:        #1A1A1A;
+  --color-text-muted:  #6B6B6B;
+  --color-text-light:  #9A9A9A;
+  --color-border:      rgba(201, 149, 42, 0.25);
+  --color-glass-bg:    rgba(255, 255, 255, 0.08);
+  --color-glass-border:rgba(201, 149, 42, 0.3);
+
+  /* Gradients */
+  --gradient-hero:     linear-gradient(135deg, #0D1B2A 0%, #0A3A4A 50%, #0D2A1A 100%);
+  --gradient-gold:     linear-gradient(135deg, #C9952A 0%, #E5B84A 50%, #9A6E1A 100%);
+  --gradient-card:     linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+  --gradient-section:  linear-gradient(180deg, #FDF6E9 0%, #F5E6C0 100%);
+  --gradient-dark:     linear-gradient(180deg, #0D1B2A 0%, #1A3348 100%);
+
+  /* Typography */
+  --font-heading:      'Playfair Display', Georgia, serif;
+  --font-body:         'Inter', -apple-system, sans-serif;
+  --font-devanagari:   'Noto Sans Devanagari', sans-serif;
+
+  /* Font Sizes (fluid clamp) */
+  --fs-xs:    clamp(0.70rem, 1.5vw, 0.80rem);
+  --fs-sm:    clamp(0.80rem, 1.8vw, 0.90rem);
+  --fs-base:  clamp(0.90rem, 2vw,   1.00rem);
+  --fs-md:    clamp(1.00rem, 2.2vw, 1.10rem);
+  --fs-lg:    clamp(1.10rem, 2.5vw, 1.25rem);
+  --fs-xl:    clamp(1.25rem, 3vw,   1.50rem);
+  --fs-2xl:   clamp(1.50rem, 3.5vw, 2.00rem);
+  --fs-3xl:   clamp(2.00rem, 4vw,   2.75rem);
+  --fs-4xl:   clamp(2.50rem, 5vw,   3.50rem);
+  --fs-5xl:   clamp(3.00rem, 6vw,   4.50rem);
+
+  /* Spacing */
+  --space-1:   0.25rem;
+  --space-2:   0.50rem;
+  --space-3:   0.75rem;
+  --space-4:   1.00rem;
+  --space-5:   1.25rem;
+  --space-6:   1.50rem;
+  --space-8:   2.00rem;
+  --space-10:  2.50rem;
+  --space-12:  3.00rem;
+  --space-16:  4.00rem;
+  --space-20:  5.00rem;
+  --space-24:  6.00rem;
+  --space-32:  8.00rem;
+
+  /* Borders */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:  0 8px 24px rgba(0,0,0,0.12);
+  --shadow-lg:  0 16px 48px rgba(0,0,0,0.18);
+  --shadow-xl:  0 24px 72px rgba(0,0,0,0.25);
+  --shadow-gold: 0 8px 32px rgba(201,149,42,0.30);
+  --shadow-gold-lg: 0 16px 56px rgba(201,149,42,0.40);
+
+  /* Transitions */
+  --transition-fast:   all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.30s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-indices */
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* Layout */
+  --container-max: 1280px;
+  --nav-height:    80px;
+}
+
+/* ---- CSS Reset & Base ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Typography Base ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+h1 { font-size: var(--fs-5xl); }
+h2 { font-size: var(--fs-3xl); }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+h5 { font-size: var(--fs-lg); }
+h6 { font-size: var(--fs-md); }
+
+p { margin-bottom: var(--space-4); }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover { color: var(--color-gold-light); }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol { list-style: none; }
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ---- Layout Utilities ---- */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.section {
+  padding-block: var(--space-24);
+}
+
+.section--dark {
+  background: var(--gradient-dark);
+  color: var(--color-white);
+}
+
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--color-white);
+}
+
+.section--cream {
+  background: var(--gradient-section);
+}
+
+.section--navy {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.section--navy h2,
+.section--navy h3 {
+  color: var(--color-white);
+}
+
+/* ---- Grid System ---- */
+.grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ---- Flex Utilities ---- */
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ---- Text Utilities ---- */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-gold   { color: var(--color-gold); }
+.text-white  { color: var(--color-white); }
+.text-muted  { color: var(--color-text-muted); }
+.text-navy   { color: var(--color-navy); }
+.text-devanagari { font-family: var(--font-devanagari); }
+
+/* ---- Section Label ---- */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-gold);
+}
+
+/* ---- Section Title ---- */
+.section-title {
+  font-size: var(--fs-3xl);
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  margin-bottom: var(--space-4);
+}
+
+.section-title span {
+  color: var(--color-gold);
+}
+
+.section-subtitle {
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+  font-weight: 400;
+}
+
+/* ---- Gold Divider ---- */
+.gold-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-gold);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-6);
+}
+
+.gold-divider--center {
+  margin-inline: auto;
+}
+
+/* ---- Marathi Text Style ---- */
+.marathi {
+  font-family: var(--font-devanagari);
+  font-weight: 600;
+}
+
+/* ---- Scrollbar Styling ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold-dark); }
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--color-gold-pale);
+  color: var(--color-brown);
+}
+
+/* ---- Responsive Breakpoints ---- */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  :root { --nav-height: 70px; }
+  .container { padding-inline: var(--space-5); }
+  .section { padding-block: var(--space-16); }
+  .grid-2,
+  .grid-3,
+  .grid-4 { grid-template-columns: 1fr; }
+  .section-title { font-size: var(--fs-2xl); }
+}
+
+@media (max-width: 480px) {
+  .container { padding-inline: var(--space-4); }
+  .section { padding-block: var(--space-12); }
+}

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="डॉ. जवर्डीकर दातांचा दवाखाना — संपर्क व अपॉइंटमेंट. शिक्षक कॉलनी, डी.पी.रोड, अंजनगाव सुर्जी. फोन: 8308465188, 9404338713." />
+  <title>संपर्क व अपॉइंटमेंट | डॉ. जवर्डीकर दातांचा दवाखाना</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-12);
+      align-items: start;
+    }
+    @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } }
+
+    /* Form */
+    .form-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(201,149,42,0.12);
+    }
+    .form-card__title {
+      font-family: var(--font-devanagari);
+      font-size: var(--fs-2xl);
+      color: var(--color-navy);
+      margin-bottom: var(--space-2);
+    }
+    .form-card__sub {
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-8);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-5);
+    }
+    @media (max-width: 480px) { .form-grid { grid-template-columns: 1fr; } }
+    .form-grid--full { grid-column: 1 / -1; }
+
+    .input--error  { border-color: #ef4444 !important; box-shadow: 0 0 0 4px rgba(239,68,68,0.08); }
+    .input--success { border-color: #22c55e !important; box-shadow: 0 0 0 4px rgba(34,197,94,0.08); }
+    .field-error { font-size: var(--fs-xs); color: #ef4444; margin-top: var(--space-1); display: none; }
+
+    /* Success Message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: var(--space-12) var(--space-8);
+    }
+    .form-success__icon { font-size: 4rem; margin-bottom: var(--space-5); }
+    .form-success__title {
+      font-family: var(--font-devanagari);
+      font-size: var(--fs-2xl);
+      color: var(--color-navy);
+      margin-bottom: var(--space-3);
+    }
+    .form-success__msg { font-size: var(--fs-base); color: var(--color-text-muted); }
+
+    /* Contact Info */
+    .contact-info { display: flex; flex-direction: column; gap: var(--space-5); }
+
+    .contact-info-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(201,149,42,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      transition: var(--transition-normal);
+    }
+    .contact-info-card:hover {
+      transform: translateX(4px);
+      border-color: rgba(201,149,42,0.35);
+      box-shadow: var(--shadow-gold);
+    }
+    .contact-info-card__icon {
+      width: 56px; height: 56px;
+      background: var(--gradient-gold);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+      box-shadow: var(--shadow-gold);
+    }
+    .contact-info-card__label {
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+      font-weight: 700;
+      margin-bottom: var(--space-1);
+    }
+    .contact-info-card__value {
+      font-size: var(--fs-base);
+      color: var(--color-navy);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .contact-info-card__value a {
+      color: var(--color-navy);
+      font-weight: 700;
+    }
+    .contact-info-card__value a:hover { color: var(--color-gold); }
+    .contact-info-card__sub {
+      font-size: var(--fs-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+    }
+
+    /* Hours table */
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table td {
+      padding: var(--space-2) 0;
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+      border-bottom: 1px solid rgba(201,149,42,0.1);
+    }
+    .hours-table td:first-child { font-weight: 600; color: var(--color-navy); }
+    .hours-table tr:last-child td { border-bottom: none; }
+
+    /* Map */
+    .map-section { margin-top: var(--space-16); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar--scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Dr. Javardikar Dental Clinic Home">
+        <div class="navbar__logo-icon" aria-hidden="true">🦷</div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">डॉ. जवर्डीकर</span>
+          <span class="navbar__logo-sub">Dental Clinic</span>
+        </div>
+      </a>
+      <nav class="navbar__nav" aria-label="Page links">
+        <a href="index.html"    class="navbar__link" id="nav-home">मुखपृष्ठ</a>
+        <a href="services.html" class="navbar__link" id="nav-services">सेवा</a>
+        <a href="about.html"    class="navbar__link" id="nav-about">डॉक्टरांबद्दल</a>
+        <a href="contact.html"  class="navbar__link active navbar__cta" id="nav-contact">📅 अपॉइंटमेंट</a>
+      </nav>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile" id="mobileMenu" role="menu">
+      <a href="index.html"    class="navbar__link" role="menuitem">🏠 मुखपृष्ठ</a>
+      <a href="services.html" class="navbar__link" role="menuitem">🦷 सेवा</a>
+      <a href="about.html"    class="navbar__link" role="menuitem">👨‍⚕️ डॉक्टरांबद्दल</a>
+      <a href="contact.html"  class="navbar__link active" role="menuitem">📅 अपॉइंटमेंट घ्या</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-label="Contact Page Hero">
+    <div class="container page-hero__content">
+      <div class="section-label" style="color:var(--color-gold);margin-bottom:var(--space-3);">Book Your Visit</div>
+      <h1 class="page-hero__title">संपर्क व <span>अपॉइंटमेंट</span></h1>
+      <p class="page-hero__subtitle">तपासणीसाठी आजच भेट द्या — आम्ही आपल्यासाठी येथे आहोत</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">मुखपृष्ठ</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>संपर्क</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="section section--cream" aria-label="Contact and appointment form">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- APPOINTMENT FORM -->
+        <div class="reveal">
+          <div class="form-card">
+            <!-- Success Message -->
+            <div class="form-success" id="formSuccess">
+              <div class="form-success__icon">✅</div>
+              <h2 class="form-success__title">
+                नमस्कार, <span data-patient-name="">रुग्ण</span>!
+              </h2>
+              <p class="form-success__msg">
+                आपली भेट विनंती यशस्वीरीत्या पाठवली गेली.<br>
+                WhatsApp वर आमचा प्रतिसाद लवकरच येईल.<br><br>
+                <strong>📞 8308465188 | 9404338713</strong>
+              </p>
+              <br>
+              <a href="index.html" class="btn btn--primary">🏠 मुखपृष्ठावर परत</a>
+            </div>
+
+            <!-- Appointment Form -->
+            <div id="appointmentFormWrap">
+              <h2 class="form-card__title">भेट बुक करा</h2>
+              <p class="form-card__sub">खालील माहिती भरा — आम्ही WhatsApp वर लवकरच संपर्क करू.</p>
+
+              <form id="appointmentForm" novalidate>
+                <div class="form-grid">
+                  <!-- Name -->
+                  <div class="form-group">
+                    <label class="form-label" for="name">पूर्ण नाव *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-input"
+                      placeholder="आपले पूर्ण नाव"
+                      autocomplete="name"
+                      required
+                    />
+                    <span class="field-error" id="nameError"></span>
+                  </div>
+
+                  <!-- Phone -->
+                  <div class="form-group">
+                    <label class="form-label" for="phone">मोबाईल नंबर *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="form-input"
+                      placeholder="10-अंकी मोबाईल नंबर"
+                      autocomplete="tel"
+                      required
+                    />
+                    <span class="field-error" id="phoneError"></span>
+                  </div>
+
+                  <!-- Service -->
+                  <div class="form-group form-grid--full">
+                    <label class="form-label" for="service">उपचार निवडा *</label>
+                    <select id="service" name="service" class="form-select" required>
+                      <option value="">— उपचार निवडा —</option>
+                      <option value="checkup">दातांची तपासणी (Dental Checkup)</option>
+                      <option value="cleaning">दातांची स्वच्छता (Scaling &amp; Polishing)</option>
+                      <option value="rct">रूट कॅनाल उपचार (Root Canal Treatment)</option>
+                      <option value="crown-bridge">क्राऊन व ब्रिज (Crown &amp; Bridge)</option>
+                      <option value="cosmetic">कॉस्मेटिक डेंटिस्ट्री (Smile Design)</option>
+                      <option value="implants">डेंटल इम्प्लांट्स (Dental Implants)</option>
+                      <option value="dentures">कबळी (Dentures)</option>
+                      <option value="fmr">पूर्ण तोंड पुनर्वसन (Full Mouth Rehab)</option>
+                      <option value="other">इतर (Other)</option>
+                    </select>
+                    <span class="field-error" id="serviceError"></span>
+                  </div>
+
+                  <!-- Date -->
+                  <div class="form-group">
+                    <label class="form-label" for="date">पसंतीची तारीख *</label>
+                    <input
+                      type="date"
+                      id="date"
+                      name="date"
+                      class="form-input"
+                      required
+                    />
+                    <span class="field-error" id="dateError"></span>
+                  </div>
+
+                  <!-- Time preference -->
+                  <div class="form-group">
+                    <label class="form-label" for="timePreference">वेळेची पसंती</label>
+                    <select id="timePreference" name="timePreference" class="form-select">
+                      <option value="">— वेळ निवडा —</option>
+                      <option value="morning">सकाळी (9 AM – 12 PM)</option>
+                      <option value="afternoon">दुपारी (12 PM – 3 PM)</option>
+                      <option value="evening">संध्याकाळी (3 PM – 7 PM)</option>
+                    </select>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="form-group form-grid--full">
+                    <label class="form-label" for="message">संदेश / समस्या (ऐच्छिक)</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      class="form-textarea"
+                      placeholder="आपल्या दातांच्या समस्येबद्दल थोडक्यात सांगा..."
+                      rows="4"
+                    ></textarea>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="form-grid--full" style="display:flex;gap:var(--space-4);flex-wrap:wrap;align-items:center;">
+                    <button type="submit" class="btn btn--primary btn--lg" id="submit-appointment-btn" style="flex:1;justify-content:center;">
+                      📅 WhatsApp वर पाठवा
+                    </button>
+                    <a href="tel:+918308465188" class="btn btn--outline btn--lg" id="call-now-btn" style="flex:1;justify-content:center;">
+                      📞 आत्ता फोन करा
+                    </a>
+                  </div>
+
+                  <p class="form-grid--full" style="font-size:var(--fs-xs);color:var(--color-text-muted);margin:0;">
+                    * चिन्हांकित माहिती अनिवार्य आहे. WhatsApp संदेश पाठवण्यासाठी आपला WhatsApp उघडेल.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="reveal reveal--right">
+          <div class="section-label" style="margin-bottom:var(--space-4);">संपर्क माहिती</div>
+          <h2 style="font-size:var(--fs-2xl);color:var(--color-navy);margin-bottom:var(--space-8);">
+            आमच्याशी <span style="color:var(--color-gold);">संपर्क साधा</span>
+          </h2>
+
+          <div class="contact-info">
+            <!-- Address -->
+            <div class="contact-info-card">
+              <div class="contact-info-card__icon">📍</div>
+              <div>
+                <div class="contact-info-card__label">पत्ता</div>
+                <div class="contact-info-card__value">
+                  शिक्षक कॉलनी, डी.पी.रोड,<br>
+                  अंजनगाव सुर्जी, जि. अमरावती
+                </div>
+                <div class="contact-info-card__sub">Shikshak Colony, D.P. Road, Anjangaon Surji, Dist. Amravati</div>
+              </div>
+            </div>
+
+            <!-- Phone 1 -->
+            <div class="contact-info-card">
+              <div class="contact-info-card__icon">📞</div>
+              <div>
+                <div class="contact-info-card__label">फोन नंबर</div>
+                <div class="contact-info-card__value">
+                  <a href="tel:+918308465188">📱 8308465188</a><br>
+                  <a href="tel:+919404338713">📱 9404338713</a>
+                </div>
+                <div class="contact-info-card__sub">WhatsApp available on both numbers</div>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="contact-info-card" style="cursor:pointer;" onclick="window.open('https://wa.me/918308465188','_blank')">
+              <div class="contact-info-card__icon" style="background:#25D366;">💬</div>
+              <div>
+                <div class="contact-info-card__label">WhatsApp</div>
+                <div class="contact-info-card__value">8308465188</div>
+                <div class="contact-info-card__sub">WhatsApp वर अपॉइंटमेंट बुक करण्यासाठी क्लिक करा</div>
+              </div>
+            </div>
+
+            <!-- Hours -->
+            <div class="contact-info-card" style="flex-direction:column;gap:var(--space-4);">
+              <div style="display:flex;align-items:center;gap:var(--space-4);">
+                <div class="contact-info-card__icon">🕐</div>
+                <div>
+                  <div class="contact-info-card__label">दवाखाना वेळ</div>
+                  <div class="contact-info-card__value">Clinic Hours</div>
+                </div>
+              </div>
+              <table class="hours-table">
+                <tr><td>सोमवार – शुक्रवार</td><td>सकाळी 9:00 – संध्याकाळी 7:00</td></tr>
+                <tr><td>शनिवार</td><td>सकाळी 9:00 – संध्याकाळी 6:00</td></tr>
+                <tr><td>रविवार</td><td>सकाळी 9:00 – दुपारी 1:00</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Direct Call Buttons -->
+          <div style="display:flex;gap:var(--space-4);margin-top:var(--space-6);flex-wrap:wrap;">
+            <a href="tel:+918308465188" class="btn btn--primary" id="contact-call1-btn" style="flex:1;justify-content:center;">
+              📞 8308465188
+            </a>
+            <a href="https://wa.me/918308465188" target="_blank" class="btn btn--outline" id="contact-whatsapp-btn" style="flex:1;justify-content:center;border-color:#25D366;color:#25D366;">
+              💬 WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-section reveal">
+        <div class="text-center" style="margin-bottom:var(--space-8);">
+          <div class="section-label">आम्ही कुठे आहोत</div>
+          <h2 class="section-title">आमचे <span>स्थान</span></h2>
+          <div class="gold-divider gold-divider--center"></div>
+          <p style="font-size:var(--fs-base);color:var(--color-text-muted);">शिक्षक कॉलनी, डी.पी.रोड, अंजनगाव सुर्जी, जि. अमरावती</p>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://maps.google.com/maps?q=21.168400292233347,77.31304483455727&z=17&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Dr. Javardikar Dental Clinic — Anjangaon Surji Location"
+          ></iframe>
+        </div>
+        <div style="text-align:center;margin-top:var(--space-5);">
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=21.168400292233347,77.31304483455727"
+            target="_blank"
+            class="btn btn--outline"
+            id="get-directions-btn"
+          >
+            🗺️ Google Maps वर दिशानिर्देश मिळवा
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">डॉ. जवर्डीकर</div>
+          <div class="footer__brand-sub">Dental Clinic — Anjangaon Surji</div>
+          <p class="footer__brand-desc">आपल्या दातांचे आरोग्य व सुंदर हास्य हे आमचे ध्येय.</p>
+          <div class="footer__social">
+            <a href="https://wa.me/918308465188" target="_blank" class="footer__social-btn" aria-label="WhatsApp">💬</a>
+            <a href="tel:+918308465188" class="footer__social-btn" aria-label="Phone">📞</a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__heading">Quick Links</h3>
+          <nav class="footer__links">
+            <a href="index.html">→ मुखपृष्ठ</a>
+            <a href="services.html">→ सेवा</a>
+            <a href="about.html">→ डॉक्टरांबद्दल</a>
+            <a href="contact.html">→ अपॉइंटमेंट</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">सेवा</h3>
+          <nav class="footer__links">
+            <a href="services.html#rct">→ रूट कॅनाल</a>
+            <a href="services.html#implants">→ डेंटल इम्प्लांट्स</a>
+            <a href="services.html#crown">→ क्राऊन व ब्रिज</a>
+            <a href="services.html#cosmetic">→ कॉस्मेटिक</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">संपर्क</h3>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📍</span>
+            <div class="footer__contact-text">शिक्षक कॉलनी, डी.पी.रोड,<br>अंजनगाव सुर्जी, जि. अमरावती</div>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon">📞</span>
+            <div class="footer__contact-text">
+              <a href="tel:+918308465188">8308465188</a> / <a href="tel:+919404338713">9404338713</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="currentYear"></span> डॉ. जवर्डीकर दातांचा दवाखाना. सर्व हक्क राखीव.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918308465188" target="_blank" class="whatsapp-float" id="whatsapp-btn" aria-label="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>WhatsApp वर चॅट करा</span>
+  </a>
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
